@@ -1,0 +1,182 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.10 project-details
+/*----------------------------------------*/
+.project-details {
+    
+    &__block {
+        padding: 40px 50px;
+        
+        @media (max-width: 1500px){
+            padding: 30px;
+        }
+        
+        @media #{$xs, $sm} {
+            padding: 20px 15px;
+        }
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 22px;
+            
+            @media #{$xs, $sm, $md} {
+                gap: 15px;
+            }
+            
+            li {
+                display: flex;
+                align-items: center;
+                color: var(--rs-gray-900);
+                text-transform: capitalize;
+                flex-wrap: wrap;
+                font-size: 14px;
+                
+                span {
+                    margin-left: 6px;
+                    font-weight: 600;
+                    
+                    @media #{$xs, $sm} {
+                        margin-left: 3px;
+                    }
+                }
+                
+                i {
+                    margin-right: 20px;
+                    color: var(--rs-theme-primary);
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    
+                    @media #{$xs, $sm, $md} {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    
+    &-top {
+        margin-bottom: 20px;
+        
+        &__media {
+            overflow: hidden;
+            @include border-radius(5px);
+            
+            @media #{$xs, $sm, $md, $lg} {
+                margin-bottom: 40px;
+            }
+        }
+        
+        &__content {
+            
+            h2 {
+                margin-bottom: 20px;
+                color: var(--rs-heading-primary);
+            }
+            
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+    p {
+        margin-bottom: 30px;
+    }
+    
+    .media {
+        overflow: hidden;
+        @include border-radius(5px);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom:20px;
+    }
+    
+    .project-info {
+        .media {
+            @media #{$xs, $sm, $md, $lg} {
+                margin-top: 30px;
+            }
+        }
+        
+        p:last-child {
+            margin-bottom:0;
+        }
+    }
+    
+    .project-info {
+    
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 0;
+            margin: 0 0 30px;
+            
+             li {
+                 padding-left: 21px;
+                 position: relative;
+                 text-transform: capitalize;
+                 
+                 &:before {
+                     top: 10px;
+                     left: 0;
+                     @include border-radius(500px);
+                     content: "";
+                     background: var(--rs-theme-primary);
+                     font-weight: bold;
+                     display: inline-block;
+                     width: 8px;
+                     height: 8px;
+                     position: absolute;
+                 }
+             }
+        }
+    }
+    
+    .share {
+        margin-top:30px;
+        gap: 17px;
+        display: flex;
+        align-items: center;
+        
+        h5 {
+            color: var(--rs-gray-800);
+            margin-bottom: 0;
+        }
+        
+        .share-social-media {
+            display: flex;
+            gap: 10px;
+        }
+    }
+    
+    .project-navigation {
+        gap: 30px;
+        
+        .rs-btn {
+            
+            &:before {
+                display: none;
+            }
+            
+            i {
+                @extend %rs-transition-3;
+            }
+            
+            &:hover {
+                color: var(--rs-gray-900);
+                
+                i {
+                    color: var(--rs-common-white);
+                }
+            }
+        }
+    }
+}

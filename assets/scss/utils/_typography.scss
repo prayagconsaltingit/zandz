@@ -1,0 +1,59 @@
+
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap' ;
+
+// font family
+$font-family: (
+    ff: (
+        "body": "'Outfit', sans-serif",
+        "heading": "'Outfit', sans-serif",
+        "fontawesome": '"Font Awesome 6 Pro"',
+    )
+);
+
+// font weight
+$font-scale: (
+    fw: (
+        "normal": normal,
+        "thin": 100,
+        "elight": 200,
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "sbold": 600,
+        "bold": 700,
+        "ebold": 800,
+        "black": 900,
+    )
+);
+
+// font size
+$font-size: (
+    fs: (
+        "body": 16px,
+        "body2": 14px,
+        "p": 16px,
+        "h1": 60px,
+        "h2": 48px,
+        "h3": 27px,
+        "h4": 24px,
+        "h5": 18px,
+        
+        "h6": 16px,
+    ),
+    lh: (
+    "body": 26px,
+    "body2": 17px,
+    "p": 26px,
+    "h1": 70px,
+    "h2": 58px,
+    "h3": 37px,
+    "h4": 34px,
+    "h5": 22px,
+    
+    "h6": 24px,
+    )
+);
+
+

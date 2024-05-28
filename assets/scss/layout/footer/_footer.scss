@@ -1,0 +1,253 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 footer
+/*----------------------------------------*/
+
+// Footer style 
+.footer__area-common {
+	position: relative;
+	z-index: 1;
+	padding-top: 145px;
+	
+	@media #{$md} {
+		padding-top: 130px;
+	}
+	@media #{$sm,$xs} {
+		padding-top:120px;
+	}
+	
+	&-pt-163 {
+		padding-top: 163px;
+		
+		@media #{$md} {
+			padding-top: 150px;
+		}
+		@media #{$sm,$xs} {
+			padding-top:145px;
+		}
+	}
+}
+
+.footer {
+	
+	&__grid {
+		display: flex;
+		gap: 50px 30px;
+		justify-content: space-between;
+		@media #{$xs, $sm, $md, $lg} {
+			gap: 30px;
+		}
+		@media #{$xs, $sm, $md} {
+			flex-wrap: wrap;
+		}
+	}
+	
+	&__logo {
+		img {
+			max-width: 126px;
+		}
+	}
+	
+	&__content {
+		p {
+			color: var(--rs-common-white);
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+	
+	&__link {
+		ul {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 12px;
+			li {
+				list-style: none;
+				a {
+					color: var(--rs-common-white);
+					font-size: 16px;
+					position: relative;
+					font-weight: var(--rs-fw-normal);
+					&::before {
+						position: absolute;
+						content: '';
+						left: -15px;
+						top: calc(50% + .5px);
+						@include transform(translateY(-50%));
+						width: 0px;
+						height: 1px;
+						background-color: var(--rs-theme-primary);
+						@extend %rs-transition-3;
+					}
+					&:hover {
+						color: var(--rs-theme-primary);
+						&::before {
+							width: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&__social {
+		@include flexbox();
+		gap: 20px;
+		&.socail-border-top {
+			border-top: 1px solid var(--rs-border-secondary);
+			position:relative;
+			
+			&:after {
+				right: -5px;
+				top: -3px;
+				z-index: 9;
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				content: '';
+				@include border-radius(500px);
+				background-color:var(--rs-border-secondary);
+				animation: popupBtn 1s infinite;
+			}
+		}
+		a {
+			overflow: hidden;
+			position: relative;
+			color: var(--rs-common-white);
+			@include flexbox();
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			background: transparent;
+			font-size: 16px;
+			@include border-radius(5px);
+			border: 1px solid var(--rs-gray-800);
+			
+			&::before {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include border-radius(5px);
+				transform: translate(-100%, 0) rotate(50deg);
+				transform-origin: top left;
+				transition: all 0.35s;
+				background-color: var(--rs-common-white);
+				z-index: -1;
+				content: "";
+			}
+			&:hover {
+				&::before {
+					transform: translate(0, 0);
+				}
+				color: var(--rs-theme-primary);
+				@include transform(translateY(-3px))
+			}
+		}
+	}
+	
+	&__subscribe {
+		gap: 9px;
+		
+		@media #{$sm,$xs} {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		
+		input {
+			width:233px;
+			height: 55px;
+			background: transparent;
+			color: var(--rs-common-white);
+			padding-right: 15px;
+			padding-left:15px;
+			
+			@media #{$md,$sm,$xs} {
+				width: 100%;
+			}
+			
+			@include rs-placeholder {
+				color: var(--rs-common-white);
+			}
+		}
+		
+		.rs-btn {
+			padding: 17px 29px;
+		}
+	}
+}
+
+.footer__main {
+	position: relative;
+	padding-bottom: 80px;
+	@media #{$sm} {
+		padding-bottom: 60px;
+	}
+	@media #{$xs} {
+		padding-bottom: 40px;
+	}
+}
+
+.footer__widget {
+	
+	&:nth-child(1) {
+		max-width: 300px;
+		
+		@media #{$lg} {
+			max-width: 250px;
+		}
+		
+		@media #{$xs, $sm, $md} {
+			max-width:100%;
+		}
+	}
+	&:nth-child(2) {
+		max-width: 184px;
+	}
+	&:nth-child(3)  {
+		max-width: 136px;
+		
+		@media #{$lg} {
+			max-width: 190px;
+		}
+		
+		@media #{$xs, $sm, $md} {
+			max-width:100%;
+		}
+	}
+	&:nth-child(4) {
+		max-width: 229px;
+		@media #{$xs, $sm} {
+			max-width:100%;
+		}
+	}
+	
+	&-title {
+		h4 {
+			margin-bottom: 32px;
+			font-size: var(--rs-fs-h4);
+			line-height: var(--rs-lh-h4);
+			position: relative;
+			z-index: 10;
+			padding-bottom: 15px;
+			text-transform: capitalize;
+			color: var(--rs-text-primary);
+			font-family: var(--rs-ff-heading);
+			border-bottom: 1px solid var(--rs-theme-primary);
+			
+			@media #{$lg} {
+				font-size: 18px;
+			}
+		}
+	}
+	
+	&-description {
+		p {
+			margin-bottom: 0;
+			color: var(--rs-common-white);
+		}
+	}
+}

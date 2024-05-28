@@ -1,0 +1,40 @@
+$colors: (
+  common: (
+    "white": #FFFFFF,
+    "black": #000000,
+    "placeholder": #484949,
+    "selection": #1745B3,
+  ),
+  body: (
+    "primary": #ffffff,
+  ),
+  theme: (
+    "primary": #00D563,
+  ),
+  heading: (
+    "primary": #00160A,
+  ),
+  text: (
+    "body": #484949,
+    "primary": #fff,
+  ),
+  gray: (
+    "900":#00160A,
+    "800":#484949,
+    "700":#0D2216,
+    "200":#E3E8F4,
+    "100":#F9F9F9,
+  ),
+  shadow: (
+    "xl":#fff,
+    "l":#fff,
+    "m":#fff,
+    "s":#fff,
+  ),
+  border: (
+    "primary": #00D563,
+    "secondary": rgb(72 73 73 / 40%),
+  )
+);
+$white : #fff;
+$black : #000;

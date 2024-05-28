@@ -1,0 +1,79 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  8.4 portfolio
+/*----------------------------------------*/
+.portfolio__area {
+    .mb-minus-30 {
+        margin-bottom: -30px;
+    }
+}
+.portfolio__item {
+    margin-bottom: 30px;
+    overflow: hidden;
+    @include border-radius(5px);
+    position: relative;
+    z-index: 1;
+    
+    &:hover {
+        
+        .portfolio__item-text {
+            
+            &:after {
+                top: 0;
+            }
+            
+            span, h4 {
+                opacity: 1;
+            }
+        }
+    
+        img {
+            @include transform(scale(1.2));
+        }
+    }
+    
+    &-text {
+        @extend %rs-transition-3;
+        padding: 30px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index:1;
+        @include border-radius(5px);
+        
+        span, h4 {
+            opacity: 0;
+            
+            &:hover {
+                color: var(--rs-gray-900);
+            }
+        }
+        
+        span {
+            @media #{$xs} {
+                margin-bottom: 5px;
+            }
+        }
+        
+        h4 {
+            @media #{$xs} {
+                font-size: 20px;
+                line-height:30px;
+            }
+        }
+        
+        &:after {
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 100%;
+            content: "";
+            @extend %rs-transition-3;
+            background: linear-gradient(180deg, rgba(0, 213, 99, 0.00) 0%, rgba(0, 213, 99, 0.86) 100%);
+        }
+    }
+}

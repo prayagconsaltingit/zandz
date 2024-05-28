@@ -1,0 +1,15 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.2 header-2
+/*----------------------------------------*/
+.header-2 {
+    .container {
+        @media (min-width: 1441px) {
+            max-width: 1750px !important;
+        }
+    }
+    
+    border-bottom: 5px solid var(--rs-gray-100);
+    @include border-radius(0px 0px 5px 5px);
+}

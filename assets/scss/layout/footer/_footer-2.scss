@@ -1,0 +1,84 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 footer-2
+/*----------------------------------------*/
+
+// Footer Widget 1
+.footer__area-common {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &-2 {
+        padding-top: 255px;
+        @media #{$md} {
+            padding-top: 130px;
+        }
+        @media #{$sm,$xs} {
+            padding-top:120px;
+        }
+        
+        .footer__bottom {
+            border-top: 1px solid var(--rs-border-secondary);
+            &-wrapper {
+                border-top: 0;
+            }
+        }
+        
+        
+    }
+}
+
+.footer__widget-2 {
+    &:nth-child(2) {
+        max-width: 135px;
+    }
+    &:nth-child(3)  {
+        max-width: 165px;
+        
+        @media #{$lg} {
+            max-width: 190px;
+        }
+        
+        @media #{$xs, $sm, $md} {
+            max-width:100%;
+        }
+    }
+    &:nth-child(4) {
+        max-width: 174px;
+        @media #{$xs, $sm} {
+            max-width:100%;
+        }
+        .footer__link {
+            ul {
+                max-width:166px;
+            }
+        }
+    }
+        
+    .footer {
+        
+        &__widget-title h4 {
+            border-bottom: 0;
+            padding-bottom:0;
+            margin-bottom:42px;
+        }
+        
+        &__link {
+            
+            ul {
+                gap: 20px;
+            }
+        }
+    }
+}
+
+.footer__social {
+    &-md {
+        gap:10px;
+        a {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

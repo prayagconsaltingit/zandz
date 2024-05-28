@@ -1,0 +1,292 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/* 8.6 service
+/*----------------------------------------*/
+.service-area {
+    
+    .mb-minus-79 {
+        margin-bottom: -79px;
+    }
+}
+.service-item {
+    margin-bottom: 79px;
+    padding: 40px;
+    @extend %rs-transition-3;
+    @include border-radius(5px);
+    border: 1px solid var(--rs-gray-200);
+    background: var(--ss-common-white);
+    
+    &:hover {
+        @include transform(translate(0, 19px));
+        border: 1px solid var(--rs-theme-primary);
+        
+        .service-item {
+            &__icon {
+                background: var(--rs-theme-primary);
+                
+                svg path[fill="#00D563"] {
+                    fill: var(--rs-common-white);
+                }
+            }
+        }
+    }
+    
+    &__icon {
+        width: 105px;
+        height: 105px;
+        overflow: hidden;
+        @extend %rs-transition-3;
+        background: var(--rs-gray-100);
+        @include border-radius(500px);
+        
+        svg path {
+            @extend %rs-transition-3;
+        }
+    }
+    
+    .title {
+        text-transform: capitalize;
+    }
+    
+    a {
+        
+        h4 {
+            &:hover {
+                color: var(--rs-theme-primary);
+            }
+        }
+    }
+    
+    .readmore {
+        color: var(--rs-gray-900);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        &:hover {
+            color: var(--rs-theme-primary);
+        }
+        
+        i {
+            line-height:inherit;
+        }
+    }
+}
+
+.subscribe {
+    
+    &__area {
+        &.mb-minus-114 {
+            margin-bottom: -114px;
+        }
+    }
+    
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+        gap: 30px;
+        padding: 56px 42px;
+        padding-right: 40px;
+        @include border-radius(5px);
+        
+        @media #{$xs, $sm} {
+           padding: 40px 38px;
+        }
+        
+        @media #{$xs} {
+            padding: 30px 20px;
+        }
+    }
+    
+    &__content{
+        gap: 27px;
+        @media #{$xs} {
+            flex-direction: column;
+        }
+        h2{
+            display: flex;
+            max-width:480px;
+            
+            @media #{$xl} {
+                font-size:40px;
+            }
+            
+            @media #{$lg, $md, $sm, $xs} {
+                max-width:100%;
+            }
+            
+            @media #{$xs, $sm} {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+        
+        img{
+            height: 100px;
+            width: 100px;
+            @media #{$lg, $md, $sm, $xs} {
+                width:60px;
+                height: 60px;
+            }
+        }
+    }
+    
+    &__form{
+        width: 550px;
+        max-width:100%;
+        height: 76px;
+        position: relative;
+        
+        @media #{$lg, $md, $sm, $xs} {
+            width: 100%;
+        }
+        
+        @media #{$xs} {
+            height: inherit;
+            width: inherit;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        input {
+            width: 100%;
+            border-radius: 5px;
+            background-color: transparent;
+            height: 100%;
+            padding: 25px 24px;
+            padding-right: 185px;
+            border: 2px solid rgb(227 232 244 / 70%);
+            @include rs-placeholder{
+                color: var(--rs-common-white);
+            }
+            @media #{$xs, $sm} {
+                padding-right: 165px;
+            }
+            @media #{$xs} {
+                padding: 20px;
+                width: 100%;
+            }
+        }
+        
+        button{
+            right: 8px;
+            top: calc(50% - 30px);
+            position: absolute;
+            color: var(--rs-common-white);
+            @media #{$xs, $sm} {
+                padding: 20px 20px;
+            }
+            @media #{$xs} {
+                position:relative;
+            }
+        }
+    }
+}
+
+.contact {
+    
+    &__area {
+        z-index: 1;
+        position: relative;
+    }
+    
+    &__background-shpae {
+        position: absolute;
+        width: 100%;
+        content: "";
+        height: 1000%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-repeat: repeat-y;
+        background-position: left center;
+    }
+    
+    &__content {
+        max-width: 625px;
+    }
+    
+    &__input {
+        margin-bottom: 30px;
+    }
+    
+    &__form {
+        
+        &__white {
+            
+            input, textarea {
+                background: var(--rs-gray-900);
+                border-color: rgb(227 232 244 / 20%) !important;
+                color: var(--rs-common-white) !important;
+                @include rs-placeholder{
+                    color: var(--rs-common-white) !important;
+                }
+            }
+        }
+        
+        ::-webkit-resizer {
+            color: var(--rs-gray-200);
+        }
+        
+        .rs-btn {
+            width: 100%;
+            margin-top: 25px;
+        }
+        
+        input {
+            height: 65px;
+        }
+    
+        input, textarea {
+            margin: 0 !important;
+            padding: 20px 30px;
+            @include border-radius(5px);
+            border: 2px solid var(--rs-gray-200);
+            color: var(--rs-gray-800);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+            @include rs-placeholder{
+                color: var(--rs-gray-800);
+            }
+        }
+        
+        textarea {
+            min-height: 130px;
+        }
+    }
+    
+    &__media {
+        margin-left: 30px;
+        margin-right: -315px;
+        margin-bottom: -120px;
+        
+        &__home-2 {
+            @include border-radius(5px);
+            overflow: hidden;
+            margin-right: -316px;
+            margin-top: -228px;
+            @media #{$xl} {
+                margin-right: -392px !important;
+            }
+        }
+        
+        @media #{$xl} {
+            margin-right: -388px;
+        }
+        
+        @media #{$lg, $md, $sm, $xs} {
+            margin: 40px auto 0;
+            width: 500px;
+            max-width: 100%;
+        }
+    }
+}

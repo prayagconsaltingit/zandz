@@ -1,0 +1,155 @@
+@use '../utils' as *;
+
+/*---------------------------------
+    1.7 common
+---------------------------------*/
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.f-left {
+	float: left
+}
+.f-right {
+	float: right
+}
+
+.z-index-1{
+	z-index: 1;
+}
+
+.z-index-11{
+	z-index: 11;
+}
+
+.opacity-05 {
+	opacity: 0.5;
+}
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+
+.include-bg{
+	@include background();
+}
+.hr-1 {
+	border-top: 1px solid rgb(232, 232, 232);
+}
+.x-clip {
+	overflow-x: clip;
+}
+.o-xs {
+	@media #{$xs} {
+		overflow-x: hidden;
+	}
+}
+.valign {
+	@include flexbox();
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+}
+
+/*----------------------------------------
+    Body Overlay 
+-----------------------------------------*/
+
+.body__overlay {
+	background-color: var(--rs-common-heading);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	@extend %rs-transition-3;
+}
+.body__overlay {
+	background-color: var(--rs-common-heading);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	@extend %rs-transition-3;
+}
+.body__overlay.opened {
+	opacity: 0.7;
+	visibility: visible;
+}
+
+/*----------------------------------------
+   Mfp customize
+-----------------------------------------*/
+.mfp-iframe-holder {
+	.mfp-content {
+		line-height: 0;
+		width: 100%;
+		max-width: 1280px;
+		@media #{$xxl} {
+			max-width: 1000px;
+		}
+		@media #{$xl} {
+			max-width: 850px;
+		}
+		@media #{$lg} {
+			max-width: 820px;
+		}
+		@media #{$md} {
+			max-width: 750px;
+		}
+	}
+}
+.mfp-close {
+	-webkit-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+	&:hover{
+		color: var(--rs-common-white);
+	}
+	&::after {
+		position: absolute;
+		content: "\f00d";
+		height: 100%;
+		width: 100%;
+		font-family: var(--rs-ff-fontawesome);
+		font-size: 31px;
+		font-weight: 200;
+		right: -20px;
+		margin-top: -25px;
+		@media #{$xs,$sm,$md} {
+			right: 15px;
+			margin-top: -30px;
+		}
+	}
+}
+
+// custom colors clsass
+.color-white {
+	color: var(--rs-common-white);
+}
+.color-theme-primary {
+	color: var(--rs-theme-primary);
+}

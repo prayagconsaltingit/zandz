@@ -1,0 +1,132 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.9 carousel
+/*----------------------------------------*/
+
+// Common swiper dot10
+.rs-swiper-dot {
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background-color: rgba(255, 255, 255, 0.2);
+
+		@include light {
+			background-color: rgba(6, 6, 6, 0.20);
+		}
+
+		opacity: 1;
+		border-radius: 30px;
+		position: relative;
+		margin: 0 8px !important;
+
+		&.swiper-pagination-bullet-active {
+			background-color: var(--rs-common-white);
+			background-color: rgba(255, 255, 255, 1);
+
+			@include light {
+				background-color: rgba(6, 6, 6, 1);
+			}
+		}
+	}
+	&.is-white {
+		.swiper-pagination-bullet {
+			background-color: rgba(255, 255, 255, 0.2);
+	
+			&.swiper-pagination-bullet-active {
+				background-color: rgba(255, 255, 255, 1);
+			}
+		}
+	}
+}
+// Feedback slider
+.feedback__active {
+	.slick-list {
+		overflow: visible;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.slick-track {
+		display: flex;
+		justify-content: center;
+	}
+	.slick-slide {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+// Carousel Slick Dots
+.feedback__active {
+	.slick-dots {
+		margin: 0;
+		display: flex;
+		position: static;
+		padding-top: 50px;
+		align-items: center;
+		justify-content: center;
+		@media #{$xxs} {
+			padding-top: 30px;
+		}
+		li {
+			width: auto;
+			height: auto;
+			margin: 0 8px;
+			display: inline-block;
+			button {
+				font-size: 0;
+				background: rgba(255, 255, 255, 0.20);
+				margin: 0;
+				padding: 0;
+				width: 10px;
+				height: 10px;
+				display: block;
+				border-radius: 100%;
+				transition: 0.3s;
+				border: 1px solid rgba(255, 255, 255, 0.10);
+
+				@include light {
+					background: rgba(6, 6, 6, 0.2);
+				}
+			}
+			&:hover,
+			&.slick-active {
+				button {
+					background: rgba(255, 255, 255, 1);
+
+					@include light {
+						background-color: rgb(6, 6, 6);
+					}
+
+					&:before {
+						opacity: 1;
+						color: transparent;
+					}
+				}
+			}
+		}
+	}
+}
+.feedback__active {
+	&::after {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: rgba(6, 6, 6, 1);
+		top: 0;
+		left: 100%;
+		mix-blend-mode: lighten;
+		opacity: 10%;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: rgba(6, 6, 6, 1);
+		top: 0;
+		right: 100%;
+		mix-blend-mode: lighten;
+		opacity: 10%;
+	}
+}

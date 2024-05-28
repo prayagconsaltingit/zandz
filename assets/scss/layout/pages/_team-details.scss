@@ -1,0 +1,113 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.11 team-details
+/*----------------------------------------*/
+
+.team-details {
+    
+    &__meida {
+        @include border-radius(5px);
+        overflow: hidden;
+        
+        @media #{$md, $sm, $xs} {
+            margin-bottom: 40px;
+        }
+        
+        img {
+            width: 100%;
+        }
+    }
+    
+    &__social{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 20px;
+        
+        li{
+            padding-bottom: 16px;
+            border-bottom: 1px solid #E3E8F4;
+
+            a{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: space-between;
+                
+                &:hover {
+                    color: var(--rs-theme-primary);
+                }
+                
+                i {
+                    color: var(--rs-theme-primary);
+                    font-size: 20px;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+    
+    &-skill__social {
+        display: flex;
+        list-style: none;
+        gap: 15px;
+        
+        li {
+            
+            a {
+                display: block;
+                font-size:26px;
+                color: var(--rs-theme-primary);
+                
+                &:hover {
+                    color: var(--rs-heading-primary);
+                    @include transform(translate(0, -5px));
+                }
+            }
+        }
+    
+        &-wrapper {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 1px solid #E3E8F4;
+            border-bottom: 1px solid #E3E8F4;
+            display: flex;
+            gap: 35px;
+        }
+    }
+    
+    &-skill__progress {
+        
+        &-item {
+            
+            &__wrapper {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 40px 158px;
+                
+                @media #{$xs, $sm, $md, $lg, $xl} {
+                    gap: 25px 40px;
+                }
+                
+                @media #{$xs, $sm, $md} {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            &-content {
+                margin-bottom: 5px;
+            }
+            
+            .progress {
+                height: 8px;
+                background: var(--rs-gray-200);
+                @include  border-radius(5px);
+                
+                .progress-bar {
+                    @include  border-radius(5px);
+                    background: var(--rs-theme-primary);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,385 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.4 header-common
+/*----------------------------------------*/
+
+.rs-sticky {
+	position: fixed !important;
+	top: 0;
+	z-index: 111;
+	inset-inline-end: 0;
+	inset-inline-start: 0;
+	width: 100%;
+	-webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+	animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+	background: var(--rs-gray-900);
+	border-top: 0;
+	
+	&.header-2 {
+		border-bottom: none;
+		@include border-radius(0);
+	}
+	
+	
+	.header-top, .header-top-2 {
+		position: fixed !important;
+		top: -100%;
+		z-index: 111;
+		inset-inline-end: 0;
+		inset-inline-start: 0;
+		width: 100%;
+		-webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+		animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+		background: var(--rs-gray-900);
+		border-top: 0;
+	}
+}
+.header-transparent {
+	position: absolute;
+	inset-inline-start: 0;
+	margin: auto;
+	width: 100%;
+	z-index: 99;
+}
+
+.header__area:not(.header-1) {
+	
+	.container {
+		max-width: 1320px;
+		padding: 0 15px;
+	}
+}
+.header__logo {
+	max-width: 126px;
+	@media #{$xs, $sm} {
+		max-width: 120px;
+	}
+	@media #{$xxs} {
+		max-width: 110px;
+	}
+}
+
+.header__main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	@media #{$xs, $sm, $md} {
+		padding: 18px 0;
+	}
+	@media #{$xxs} {
+		padding: 16px 0;
+	}
+}
+// Header Baricon
+.bar-icon {
+	width: 26px;
+	height: 18px;
+	@include flexbox();
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: hidden;
+	transition: color .2s ease-out;
+	span {
+		width: 100%;
+		height: 2px;
+		background: var(--rs-theme-primary);
+		display: inline-block;
+		transition: color .2s ease-out;
+		&:nth-child(2) {
+			margin-left: 0px;
+		}
+	}
+	&:hover {
+		span {
+			animation: qode-draw .8s cubic-bezier(.44,1.1,.53,.99) 1 forwards;
+			&:nth-child(2) {
+				margin-left: 0px;
+				animation-delay: .1s;
+			}
+			&:nth-child(3) {
+				animation-delay: .2s;
+			}
+		}
+	}
+	&.is-black {
+		span {
+			background: var(--rs-common-black);
+		}
+	}
+	&.is-white {
+		span {
+			background: var(--rs-common-white);
+		}
+	}
+}
+
+// social menu
+.social-media {
+	@include flexbox();
+	gap: 6px;
+	
+	a {
+		color: var(--rs-gray-900);
+		@include flexbox();
+		align-items: center;
+		position: relative;
+		overflow: hidden;
+		justify-content: center;
+		width: 42px;
+		height: 42px;
+		background: var(--rs-common-white);
+		font-size: 20px;
+		@include border-radius(500px);
+		border: 1px solid rgb(0 213 99 / 20%);
+		&::before {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include border-radius(500px);
+			transform: translate(-100%, 0) rotate(50deg);
+			transform-origin: top left;
+			transition: all 0.35s;
+			background-color: var(--rs-theme-primary);
+			z-index: -1;
+			content: "";
+		}
+		&:hover {
+			color: var(--rs-common-white);
+			@include transform(translateY(-3px));
+			&::before {
+				transform: translate(0, 0);
+			}
+		}
+	}
+	&-2 {
+		
+		a {
+			border-color: var(--rs-gray-200);
+			color: var(--rs-theme-primary);
+			&:hover {
+				//border-color: var(--rs-theme-primary);
+				border-color: var(--rs-theme-primary)
+			}
+		}
+	}
+}
+
+// header btn
+.header__btn {
+	gap: 15px;
+	
+	&-white {
+		h5 {
+			&:hover {
+				color: var(--rs-theme-primary);
+			}
+		}
+		
+		.text {
+			h5, span {
+				color: var(--rs-common-white);
+			}
+		}
+	}
+	
+	.icon {
+		width: 55px;
+		height: 55px;
+		@include border-radius(500px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color:var(--rs-theme-primary);
+		
+		i {
+			color: var(--rs-common-white);
+		}
+	}
+	
+	.text {
+		h5 {
+			&:hover {
+				color: var(--rs-theme-primary);
+			}
+		}
+	}
+}
+
+.header-top {
+	padding: 17px 0;
+	
+	.container {
+		@media (min-width: 1441px) {
+			max-width: 1750px !important;
+		}
+	}
+	
+	&-menu {
+		gap: 30px;
+		list-style: none;
+		
+		li {
+			a {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				color: var(--rs-common-white);
+				
+				&:hover {
+					color: var(--rs-theme-primary);
+				}
+			}
+		}
+	}
+	
+	&-socail-menu {
+		gap: 20px;
+		list-style: none;
+		
+		li {
+			a {
+				display: flex;
+				font-size:15px;
+				color: var(--rs-common-white);
+				
+				&:hover {
+					@include transform(translate(0, -5px));
+					color: var(--rs-theme-primary);
+				}
+			}
+		}
+	}
+}
+
+.header-top-2 {
+	overflow: hidden;
+	padding: 10.5px 0;
+	
+	.container {
+		z-index: 1;
+		position: relative;
+	}
+	
+	&__right {
+		display: flex;
+		gap: 31px;
+	}
+	
+	.horizental-bar {
+		width: 1px;
+		height: 29px;
+		opacity: 0.2;
+		background: var(--rs-theme-primary);
+	}
+	
+	&__menu {
+		gap: 40px;
+		list-style: none;
+		
+		li {
+			
+			a {
+				color: var(--rs-common-white);
+				font-size: 16px;
+				font-style: normal;
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				font-weight: 400;
+				line-height: 160%;
+				
+				&:hover {
+					color: var(--rs-theme-primary);
+				}
+			}
+		}
+	}
+	
+	&__menu-1 {
+		gap: 40px;
+		list-style: none;
+		@media #{$md, $sm, $xs} {
+			gap: 250px
+		}
+		
+		&.background-shape {
+			
+			&:after {
+				background-size:contain;
+				background-repeat: no-repeat;
+				background-position:right center;
+				background-image: url('../imgs/home3/header-bar.svg');
+				z-index: -1;
+				position: absolute;
+				left: calc(-9999px + 455px);
+				top: -11px;
+				content: "";
+				width: 9999px;
+				height: calc(100% + 22px);
+				
+				@media #{$lg} {
+					left: calc(-9999px + 350px);
+				}
+				
+				@media #{$md, $sm, $xs} {
+					left: calc(-9999px + 200px);
+				}
+			}
+			&:before {
+				z-index: -1;
+				position: absolute;
+				left: -9999px;
+				top: -11px;
+				content: "";
+				width: 9999px;
+				height: calc(100% + 22px);
+				background-color:var(--rs-theme-primary);
+			}
+		}
+		
+		li {
+			
+			a {
+				color: var(--rs-common-white);
+				font-size: 16px;
+				font-style: normal;
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				font-weight: 400;
+				line-height: 160%;
+				
+				&:hover {
+					color: var(--rs-heading-primary);
+				}
+			}
+		}
+	}
+	
+	&__socail-menu {
+		gap: 25px;
+		list-style: none;
+		@media #{$md, $sm, $xs} {
+			gap: 20px
+		}
+		
+		li {
+			
+			a {
+				color: var(--rs-common-white);
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 160%;
+				
+				&:hover, &:hover {
+					color: var(--rs-theme-primary);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,111 @@
+
+@use '../utils' as *;
+
+/*---------------------------------
+	1.8 spacing
+---------------------------------*/
+
+.section-space {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	@media #{$md} {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.section-space-top {
+	padding-top: 120px;
+	@media #{$md} {
+		padding-top: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+	}
+}
+.section-space-bottom {
+	padding-bottom: 120px;
+	@media #{$md} {
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-bottom: 70px;
+	}
+}
+.section__title-space {
+	margin-bottom: 50px;
+}
+
+.section-space-top-228 {
+	padding-top: 228px;
+	@media #{$xl} {
+		padding-top: 200px;
+	}
+	@media #{$lg} {
+		padding-top: 180px;
+	}
+	@media #{$sm,$xs, $md} {
+		padding-top: 170px;
+	}
+}
+
+
+
+
+
+.btn__wrapper {
+	margin-top: 60px;
+	@media #{$xs, $sm} {
+		margin-top: 35px;
+	}
+}
+// Footer space
+.footer-space-top {
+	padding-top: 120px;
+	@media #{$md} {
+		padding-top: 800px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+	}
+}
+
+//  mb-minus-30
+.mb-minus-30 {
+	margin-bottom: -30px;
+}
+
+// feedback__section-space
+.feedback__section-space {
+	padding-top: 82px;
+	padding-bottom: 82px;
+	@media #{$md} {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	
+}
+
+// cta__section-space
+.cta__section-space {
+	padding: 41px 50px;
+	
+	&-2 {
+		padding: 80px 101px;
+	}
+	
+	@media #{$xl} {
+		padding: 35px 40px;
+	}
+	
+	@media #{$sm,$xs} {
+		padding: 25px;
+	}
+}

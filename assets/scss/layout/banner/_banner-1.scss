@@ -1,0 +1,172 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.1 banner Style 1
+/*----------------------------------------*/
+
+// Banner style
+.banner-1 {
+	
+	&__space {
+		padding:190px 0 240px;
+		
+		@media #{$lg} {
+			padding: 150px 0 200px;
+		}
+		
+		@media #{$md} {
+			padding: 80px 0 100px;
+		}
+		
+		@media #{$sm, $xs} {
+			padding: 60px 0 70px;
+		}
+	}
+	
+	&__shapes {
+		
+		.big-shape, .small-shape {
+			position: absolute;
+			z-index: -1;
+		}
+		
+		.big-shape-1 {
+			top: -780px;
+			left: -1038px;
+			@media #{$lg} {
+				left: -1180px;
+			}
+			@media #{$md} {
+				left: -1257px;
+			}
+			@media #{$sm} {
+				left: -1329px;
+			}
+			@media #{$xs} {
+				left: -1417px;
+			}
+		}
+		
+		.big-shape-2 {
+			top: -815px;
+			left: -1038px;
+			@media #{$lg} {
+				left: -1180px;
+			}
+			@media #{$md} {
+				left: -1257px;
+			}
+			@media #{$sm} {
+				left: -1329px;
+			}
+			@media #{$xs} {
+				left: -1417px;
+			}
+		}
+		
+		.big-shape-3 {
+			bottom: -250px;
+			left: 220px;
+			@media #{$lg, $md, $sm, $xs} {
+				bottom: -650px;
+			}
+			@media #{$xs} {
+				display: none;
+			}
+		}
+		
+		.big-shape-4 {
+			top: -717px;
+			right: -882px;
+			@media #{$sm, $xs} {
+				display: none;
+			}
+		}
+		
+		.small-shape-1 {
+			left: 291px;
+			bottom: -681px;
+			@media #{$xs} {
+				display: none;
+			}
+		}
+		
+		.small-shape-2 {
+			left: 530px;
+			bottom: -247px;
+			@media #{$lg, $md, $sm, $xs} {
+				left: 425px;
+				bottom: -284px;
+			}
+			@media #{$xs} {
+				display: none;
+			}
+		}
+		
+		.small-shape-3 {
+			right: -593px;
+			bottom: -535px;
+			@media #{$xs} {
+				display: none;
+			}
+		}
+		
+		.small-shape-4 {
+			right: -592px;
+			bottom: -335px;
+			@media #{$xs} {
+				display: none;
+			}
+		}
+	}
+	
+	.container {
+		z-index: 1;
+		position: relative;
+	}
+	
+	&__media {
+		z-index: -2;
+		position: absolute;
+		right:-315px;
+		top:-190px;
+		@media #{$lg} {
+			right: -368px;
+			top: -229px;
+		}
+		@media #{$md, $sm, $xs} {
+			right: -419px;
+			top: -287px;
+		}
+		@media #{$sm} {
+			top: -195px;
+		}
+		@media #{$xs} {
+			right: -298px;
+			top: -63px;
+		}
+		@media (max-width:450px) {
+			right: -451px;
+			top: -74px;
+		}
+	}
+	
+	&__content {
+		@media #{$xs} {
+			max-width: 329px;
+		}
+		
+		h1 {
+			font-weight: var(--rs-fw-sbold);
+			color: var(--rs-common-white);
+			
+			span {
+				color: var(--rs-theme-primary);
+			}
+		}
+		
+		p {
+			color: var(--rs-common-white);
+			max-width: 350px;
+		}
+	}
+}

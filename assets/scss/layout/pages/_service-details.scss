@@ -1,0 +1,122 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.9 service-details
+/*----------------------------------------*/
+.service-details__content {
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--rs-heading-primary);
+        margin-bottom: 30px;
+    }
+    
+    p {
+        margin-bottom: 30px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    .media {
+        @include border-radius(5px);
+        overflow: hidden;
+    }
+    
+    ul {
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        padding-left:18px;
+    }
+    
+}
+
+.ssd-card {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    
+    .icon{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+        @include border-radius(5px);
+        background: var(--rs-theme-primary);
+        box-shadow: 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06);
+        
+        img {
+            max-width: 40px;
+        }
+    }
+    
+    p {
+        margin: 0;
+    }
+}
+
+.what-do-next {
+    margin-bottom: 40px;
+    gap: 30px;
+    display: flex;
+    
+    @media #{$xs, $sm, $md} {
+        flex-direction: column;
+    }
+    
+    &-item {
+        margin-bottom: 20px;
+        padding: 10px;
+        padding-right: 48px;
+        gap: 20px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0px 5px 5px 5px;
+        border: 1px solid var(--gray-200, #E3E8F4);
+        background: var(--White, #FFF);
+        
+        &__icon {
+            
+            img {
+                width:40px;
+            }
+        }
+        
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.service-information__item {
+        max-width: 387px;
+        
+        &-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 30px;
+            @media #{$xs} {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+        h5 {
+            gap: 15px;
+            display: flex;
+            margin-bottom: 24px;
+            align-items: center;
+            color: var(--rs-gray-800);
+            
+            i {
+                color: var(--rs-theme-primary)
+            }
+        }
+        
+        p {
+            margin: 0;
+        }
+    }

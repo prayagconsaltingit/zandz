@@ -1,0 +1,67 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.6 sectiontitle
+/*----------------------------------------*/
+// Section subtitle 1
+.section {
+  &__title-wrapper {
+    position: relative;
+    z-index: 55;
+    
+    &__white {
+      .section__title {
+        color: var(--rs-common-white);
+      }
+      
+      p {
+        color: var(--rs-common-white);
+      }
+      
+      ul {
+        
+        li {
+          color: var(--rs-common-white);
+        }
+      }
+    }
+  }
+  
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--rs-theme-primary);
+    font-family: var(--rs-ff-heading);
+    font-size: var(--rs-fs-body2);
+    font-style: normal;
+    font-weight: var(--rs-fw-bold);
+    line-height: normal;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    
+    &-2 {
+      img {
+        margin-left:0;
+        margin-right:17px;
+      }
+    }
+    
+    img {
+      margin-left: 23px;
+      max-width: 33.17px;
+    }
+    
+    .xlab-img {
+      width:18px;
+      height:18px;
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+  
+  &__title {
+    text-transform: capitalize;
+    color: var(--rs-heading-primary);
+  }
+}

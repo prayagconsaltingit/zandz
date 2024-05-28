@@ -1,0 +1,95 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/* 8.1 404
+/*----------------------------------------*/
+.error {
+    
+    &__content {
+        
+        h1 {
+            font-size: 174.159px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 203.186px;
+            
+            @media #{$lg} {
+                font-size: 150px;
+                line-height:180px;
+            }
+            @media #{$md} {
+                font-size: 140px;
+                line-height:170px;
+            }
+            @media #{$sm} {
+                font-size: 120px;
+                line-height: 140px;
+            }
+            @media #{$xs} {
+                font-size: 100px;
+                line-height: 120px;
+            }
+            @media #{$xxs} {
+                font-size: 80px;
+                line-height: 100px;
+            }
+        }
+        
+        a {
+            color: var(--rs-theme-primary);
+            text-decoration: underline;
+            
+            &:hover {
+                color: var(--rs-heading-primary);
+            }
+        }
+    }
+    
+    &__search {
+        width: 530px;
+        max-width:100%;
+        margin-left: auto;
+        height: 55px;
+        margin-right: auto;
+        @include border-radius(5px);
+        
+        input {
+            height: 100%;
+            border: 1px solid var(--rs-gray-200);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+            color: var(--rs-gray-800);
+            @include rs-placeholder{
+                color: var(--rs-gray-800);
+            }
+        }
+        
+        .rs-btn {
+            height: 100%;
+            padding: 17px 46.7px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            @media #{$sm} {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            @media #{$xs} {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+            @media #{$xxs} {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            &:before {
+                background-color: var(--rs-heading-primary);
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            &:hover {
+                color: var(--rs-common-white);
+            }
+        }
+    }
+}

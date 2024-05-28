@@ -1,0 +1,9 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.1 color
+/*----------------------------------------*/
+.color-white { color: var(--rs-common-white) }
+.color-heading-primary { color: var(--rs-heading-primary) }
+
+.rs-fw-sbold {font-weight: var(--rs-fw-sbold) }

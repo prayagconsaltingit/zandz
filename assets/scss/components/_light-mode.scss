@@ -1,0 +1,20 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.8 lightmode
+/*----------------------------------------*/
+
+.rs-theme-light:root {
+  --rs-text-primary: rgba(6, 6, 6, 1);
+  --rs-text-secondary: rgba(255, 255, 255, 1);
+  --rs-text-body: rgb(81, 82, 84);
+  --rs-border-primary: rgba(6, 6, 6, 0.1);
+  --rs-bg-2: rgba(249, 249, 249, 1);
+  --rs-bg-5: rgb(243, 243, 243);
+  body {
+    background: var(--rs-body-secondary);
+  }
+  .theme-bg-1 {
+    background-color: var(--rs-bg-2);
+  }
+}

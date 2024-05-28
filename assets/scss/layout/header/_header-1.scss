@@ -1,0 +1,118 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  		3.1 header-1
+/*----------------------------------------*/
+.header-1 {
+    
+    .container {
+        @media (min-width: 992px) {
+            max-width: 1320px;
+            padding: 0 15px;
+        }
+    }
+    
+    &.rs-sticky {
+        
+        .header__btn {
+            
+            
+            .text {
+                h5, span {
+                    color: var(--rs-common-white);
+                }
+                
+                a {
+                    &:hover h5 {
+                        color: var(--rs-theme-primary);
+                    }
+                }
+            }
+        }
+            
+        .logo {
+            display: none !important;
+            
+            &.logo-2 {
+                display: block !important;
+            }
+        }
+        
+        .main-menu {
+            & ul{
+                & li{
+                    > a {
+                        color: var(--rs-common-white);
+                        &::before {
+                            background: var(--rs-theme-primary);
+                        }
+                    }
+                    & .submenu{
+                        
+                        & li{
+                            & a{
+                                &:hover {
+                                    color: var(--rs-theme-primary);
+                                    &::before {
+                                        background: var(--rs-theme-primary);
+                                    }
+                                }
+                            }
+                            &:hover{
+                                & > a{
+                                    color: var(--rs-theme-primary);
+                                    &::before{
+                                        background-color: var(--rs-theme-primary);
+                                    }
+                                }
+                            }
+                            &.has-dropdown{
+                                &:hover{
+                                    & > a{
+                                        &::after{
+                                            color: var(--rs-theme-primary);
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                    & .mega-menu{
+                        & li{
+                            & ul{
+                                & li{
+                                    &:hover{
+                                        & > a{
+                                            color: var(--rs-theme-primary);
+                                            &::before{
+                                                background: var(--rs-theme-primary);
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            
+                            &:hover{
+                                & > .mega-menu-title{
+                                    color: var(--rs-theme-primary);
+                                }
+                            }
+                        }
+                    }
+                    
+                    &:hover{
+                        & > a{
+                            color: var(--rs-theme-primary);
+                            
+                            &::after{
+                                color: var(--rs-theme-primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
